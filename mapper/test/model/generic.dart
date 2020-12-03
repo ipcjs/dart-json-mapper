@@ -5,11 +5,11 @@ import 'model.dart';
 @jsonSerializable
 @Json(typeNameProperty: 'technicalName', ignoreNullMembers: true)
 class EntityModel<T> {
-  final String parentUuid;
-  final String uuid;
+  final String? parentUuid;
+  final String? uuid;
 
   @JsonProperty(ignore: true)
-  final T entity;
+  final T? entity;
 
   static Map<String, dynamic> entityProperties = {};
 
@@ -43,8 +43,8 @@ class EntityModel<T> {
 @jsonSerializable
 @Json(typeNameProperty: 'technicalName', ignoreNullMembers: true)
 abstract class AbstractEntityModel<T> {
-  final String parentUuid;
-  final String uuid;
+  final String? parentUuid;
+  final String? uuid;
 
   const AbstractEntityModel({this.parentUuid, this.uuid});
 

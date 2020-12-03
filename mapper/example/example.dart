@@ -26,7 +26,7 @@ class Person {
   List<String> skills = ['Go', 'Dart', 'Flutter'];
 
   @JsonProperty(name: 'last_promotion_date', ignore: true)
-  DateTime lastPromotionDate;
+  DateTime? lastPromotionDate;
 
   @JsonProperty(name: 'hire_date')
   DateTime hireDate = DateTime(2003, 02, 28);
@@ -35,9 +35,9 @@ class Person {
   String name = 'Forest';
 
   @JsonProperty(ignore: true)
-  num salary;
+  num? salary;
 
-  num dob;
+  num? dob;
   num age = 36;
   var lastName = 'Gump';
 
@@ -50,14 +50,6 @@ class Person {
   List<Car> vehicles = [Car('Tesla', Color.Black), Car('BMW', Color.Red)];
 
   String get fullName => '${name} ${lastName}';
-
-  @override
-  String toString() {
-    return 'Person{skills: $skills, lastPromotionDate: '
-        '$lastPromotionDate, hireDate: $hireDate, married: $married, name: '
-        '$name, salary: $salary, dob: $dob, age: $age, lastName: $lastName, '
-        'eyeColor: $eyeColor, hairColor: $hairColor, vehicles: $vehicles}';
-  }
 }
 
 void main() {
